@@ -3,39 +3,18 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { useRouteMatch } from 'react-router';
 import { Link } from 'react-router-dom';
 import logoImg from '../../assets/logo.svg';
+import {
+    Issue,
+    Repository,
+    RepositoryParams,
+} from '../../models/repository.model';
 import api from '../../services/api';
 import { Header, Issues, RepositoryInfo } from './styles';
 
-interface RepositoryParams {
-    repository: string;
-}
-
-interface Repository {
-    full_name: string;
-    description: string;
-    stargazers_count: number;
-    forks_count: number;
-    open_issues_count: number;
-    owner: {
-        login: string;
-        avatar_url: string;
-    };
-}
-
-interface Issue {
-    id: number;
-    title: string;
-    html_url: string;
-    user: {
-        login: string;
-    };
-}
-
 const Repository: React.FC = () => {
+    const { params } = useRouteMatch<RepositoryParams>();
     const [repository, setRepository] = useState<Repository | null>(null);
     const [issues, setIssues] = useState<Issue[]>([]);
-
-    const { params } = useRouteMatch<RepositoryParams>();
 
     useEffect(() => {
         api.get<Repository>(`repos/${params.repository}`).then((response) => {
@@ -64,7 +43,7 @@ const Repository: React.FC = () => {
                 <RepositoryInfo>
                     <header>
                         <img
-                            src={repository?.owner.avatar_url}
+                            src={repository.owner.avatar_url}
                             alt="Rocketseat"
                         />
 
