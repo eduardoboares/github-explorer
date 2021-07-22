@@ -2,7 +2,7 @@ export interface RepositoryParams {
     repository: string;
 }
 
-export interface Repository {
+export interface RepositoryResponse {
     full_name: string;
     description: string;
     stargazers_count?: number;

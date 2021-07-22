@@ -2,24 +2,26 @@ import React, { FormEvent, useEffect, useState } from 'react';
 import { FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import logoImg from '../../assets/logo.svg';
-import { Repository } from '../../models/repository.model';
+import { RepositoryResponse } from '../../models/repository.model';
 import api from '../../services/api';
 import { Error, Form, Repositories, Title } from './styles';
 
 const Dashboard: React.FC = () => {
     const [newRepo, setNewRepo] = useState('');
     const [inputError, setInputError] = useState('');
-    const [repositories, setRepositories] = useState<Repository[]>(() => {
-        const storagedRepositories = localStorage.getItem(
-            '@GitHubExplorer:repositories',
-        );
+    const [repositories, setRepositories] = useState<RepositoryResponse[]>(
+        () => {
+            const storagedRepositories = localStorage.getItem(
+                '@GitHubExplorer:repositories',
+            );
 
-        if (storagedRepositories) {
-            return JSON.parse(storagedRepositories);
-        }
+            if (storagedRepositories) {
+                return JSON.parse(storagedRepositories);
+            }
 
-        return [];
-    });
+            return [];
+        },
+    );
 
     useEffect(() => {
         localStorage.setItem(
@@ -39,7 +41,9 @@ const Dashboard: React.FC = () => {
         }
 
         try {
-            const response = await api.get<Repository>(`repos/${newRepo}`);
+            const response = await api.get<RepositoryResponse>(
+                `repos/${newRepo}`,
+            );
 
             const repository = response.data;
 
