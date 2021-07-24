@@ -39,25 +39,21 @@ A simple repository explorer
   <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-reference">Reference</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-license">License</a>
-</h5><br>
-
----
-
-<br>
+</h5>
 
 # 📖 Introduction<br>
 
 This repository is a small web application developed to study TypeScript with React. In a simple way, it allows registering and listing repositories, in addition to providing some information about it.<br><br>
 
-<details><summary>Project Layout</summary>
+<details><summary>Project Layout</summary><br>
   <p align="center">
-    <img height="430" alt="dashboard-light" src=".github\dashboard-light.fw.png">
-    <img height="430" alt="repository-light" src=".github\repository-light.fw.png">
+    <img height="275" alt="dashboard-light" src=".github\dashboard-light.fw.png">
+    <img height="275" alt="repository-light" src=".github\repository-light.fw.png">
   </p><br>
   <p align="center">
-    <img height="430" alt="dashboard-dark" src=".github\dashboard-dark.fw.png">
-    <img height="430" alt="repository-dark" src=".github\repository-dark.fw.png">
-  </p><br>
+    <img height="275" alt="dashboard-dark" src=".github\dashboard-dark.fw.png">
+    <img height="275" alt="repository-dark" src=".github\repository-dark.fw.png">
+  </p>
 </details><br>
 
 # 🌐 Technologies<br>
