@@ -47,12 +47,12 @@ This repository is a small web application developed to study TypeScript with Re
 
 <details><summary>Project Layout</summary><br>
   <p align="center">
-    <img height="275" alt="dashboard-light" src=".github\dashboard-light.fw.png">
-    <img height="275" alt="repository-light" src=".github\repository-light.fw.png">
+    <img height="250" alt="dashboard-light" src=".github\dashboard-light.fw.png">
+    <img height="250" alt="repository-light" src=".github\repository-light.fw.png">
   </p><br>
   <p align="center">
-    <img height="275" alt="dashboard-dark" src=".github\dashboard-dark.fw.png">
-    <img height="275" alt="repository-dark" src=".github\repository-dark.fw.png">
+    <img height="250" alt="dashboard-dark" src=".github\dashboard-dark.fw.png">
+    <img height="250" alt="repository-dark" src=".github\repository-dark.fw.png">
   </p>
 </details><br>
 
