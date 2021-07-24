@@ -39,7 +39,7 @@ A simple repository explorer
   <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-reference">Reference</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-license">License</a>
-</h5>
+</h5><br>
 
 # 📖 Introduction<br>
 
