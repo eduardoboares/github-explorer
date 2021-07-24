@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiChevronRight } from 'react-icons/fi';
 import { useRouteMatch } from 'react-router';
-import { Link } from 'react-router-dom';
-import logoImg from '../../assets/logo.svg';
 import {
     Issue,
     RepositoryParams,
     RepositoryResponse,
 } from '../../models/repository.model';
 import api from '../../services/api';
-import { Header, Issues, RepositoryInfo } from './styles';
+import { Issues, RepositoryInfo } from './styles';
 
 const Repository: React.FC = () => {
     const { params } = useRouteMatch<RepositoryParams>();
@@ -34,34 +32,22 @@ const Repository: React.FC = () => {
 
     return (
         <>
-            <Header>
-                <img src={logoImg} alt="GitHub Explorer" />
-
-                <Link to="/">
-                    <FiChevronLeft size={16} />
-                    Voltar
-                </Link>
-            </Header>
-
-            {repository ? (
+            {repository && (
                 <RepositoryInfo>
                     <header>
                         <img
                             src={repository.owner.avatar_url}
-                            alt="Rocketseat"
+                            alt={repository.owner.login}
                         />
-
                         <div>
                             <strong>{repository.full_name}</strong>
-
                             <p>{repository.description}</p>
                         </div>
                     </header>
-
                     <ul>
                         <li>
                             <strong>{repository.stargazers_count}</strong>
-                            <span>stars</span>
+                            <span>Start</span>
                         </li>
                         <li>
                             <strong>{repository.forks_count}</strong>
@@ -73,19 +59,22 @@ const Repository: React.FC = () => {
                         </li>
                     </ul>
                 </RepositoryInfo>
-            ) : (
-                <p>Carregando...</p>
             )}
 
             <Issues>
                 {issues.map((issue) => (
-                    <a key={issue.id} href={issue.html_url}>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={issue.id}
+                        href={issue.html_url}
+                    >
                         <div>
                             <strong>{issue.title}</strong>
                             <p>{issue.user.login}</p>
                         </div>
 
-                        <FiChevronRight size={20} />
+                        <FiChevronRight size={20} color="#cbcbd6" />
                     </a>
                 ))}
             </Issues>
